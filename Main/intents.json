@@ -1,0 +1,98 @@
+{
+  "intents": [
+    {
+      "label": "greeting",
+      "requests": [
+        "Hi",
+        "How are you",
+        "Is anyone there?",
+        "Hello",
+        "Good day"
+      ],
+      "responses": [
+        "Hello, thanks for visiting",
+        "Good to see you again",
+        "Hi there, how can I help?"
+      ]
+    },
+    {
+      "label": "goodbye",
+      "requests": [
+        "Bye",
+        "See you later",
+        "Goodbye"
+      ],
+      "responses": [
+        "See you later, thanks for visiting",
+        "Have a nice day",
+        "Bye! Come back again soon."
+      ]
+    },
+    {
+      "label": "thanks",
+      "requests": [
+        "Thanks",
+        "Thank you",
+        "That's helpful"
+      ],
+      "responses": [
+        "Happy to help!",
+        "Any time!",
+        "My pleasure"
+      ]
+    },
+    {
+      "label":"sugar",
+      "requests":[
+        "what are the available wines with sugar level",
+        "wines with sugar level",
+        "what are the wines with sugar level",
+        "what are the wines that have sugar level",
+        "what wines have sugar level"
+      ],
+      "responses":[
+        "about sugar level of wine"
+      ]
+    },
+    {
+      "label":"flavor",
+      "requests":[
+       "what are the available wines with flavor",
+        "wines with flavor",
+        "what are the wines with flavor",
+        "what are the wines that have flavor",
+        "what wines have flavor"
+
+      ],
+      "responses":[
+        "about flavor of the wine"
+      ]
+    },
+    {
+      "label":"winery",
+      "requests":[
+        "what are the available wines from winery",
+        "what are the available wines made in",
+        "wines from ",
+        "wines made in",
+        "what are the wines made in",
+        "what are the wines from",
+        "what wines are made in",
+        "what wines are from"
+
+      ],
+      "responses":[
+        "about winery"
+      ]
+    },{
+      "label":"region",
+      "requests":[
+        "what is the region of winery"
+      ],
+      "responses":[
+        "about the region of the winery"
+      ]
+    }
+  ]
+}
+

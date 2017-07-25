@@ -1,0 +1,61 @@
+<rdf:RDF
+      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+      xmlns:foaf="http://xmlns.com/foaf/0.1/"
+      xmlns:admin="http://webns.net/mvcb/">
+<foaf:PersonalProfileDocument rdf:about="">
+  <foaf:maker rdf:resource="#me"/>
+  <foaf:primaryTopic rdf:resource="#me"/>
+  <admin:generatorAgent rdf:resource="http://www.ldodds.com/foaf/foaf-a-matic"/>
+  <admin:errorReportsTo rdf:resource="mailto:leigh@ldodds.com"/>
+</foaf:PersonalProfileDocument>
+<foaf:Person rdf:ID="me">
+<foaf:name>Thirasara Ariyarathna</foaf:name>
+<foaf:title>Miss</foaf:title>
+<foaf:givenname>Thirasara</foaf:givenname>
+<foaf:family_name>Ariyarathna</foaf:family_name>
+<foaf:nick>chooty</foaf:nick>
+<foaf:mbox_sha1sum>b01b5835fa8ae7b7582968a7ecacb9b85503a6c9</foaf:mbox_sha1sum>
+<foaf:homepage rdf:resource="thirasara"/>
+<foaf:phone rdf:resource="tel:1345322566"/>
+<foaf:workplaceHomepage rdf:resource="work"/>
+<foaf:workInfoHomepage rdf:resource="development"/>
+<foaf:schoolHomepage rdf:resource="hogwards"/>
+<foaf:knows>
+<foaf:Person>
+<foaf:name>sajinie</foaf:name>
+<foaf:mbox_sha1sum>8117d2d658ba93bf3a2c792259647697c18cd5b5</foaf:mbox_sha1sum></foaf:Person></foaf:knows>
+<foaf:knows>
+<foaf:Person>
+<foaf:name>surani</foaf:name>
+<foaf:mbox_sha1sum>38e26121709ef54cc8c1ea0a9c64c280e4444efb</foaf:mbox_sha1sum></foaf:Person></foaf:knows>
+<foaf:knows>
+<foaf:Person>
+<foaf:name>prabodha</foaf:name>
+<foaf:mbox_sha1sum>00afbcb39e234203c8f3af121c2328632adf841a</foaf:mbox_sha1sum></foaf:Person></foaf:knows></foaf:Person>
+
+<foaf:Person rdf:ID="you">
+<foaf:name>Viduenth Ariyarathna</foaf:name>
+<foaf:title>Miss</foaf:title>
+<foaf:givenname>Thirasara</foaf:givenname>
+<foaf:family_name>Ariyarathna</foaf:family_name>
+<foaf:nick>chooty</foaf:nick>
+<foaf:mbox_sha1sum>b01b5835fa8ae7b7582968a7ecacb9b85503a6c9</foaf:mbox_sha1sum>
+<foaf:homepage rdf:resource="thirasara"/>
+<foaf:phone rdf:resource="tel:1345322566"/>
+<foaf:workplaceHomepage rdf:resource="work"/>
+<foaf:workInfoHomepage rdf:resource="development"/>
+<foaf:schoolHomepage rdf:resource="hogwards"/>
+<foaf:knows>
+<foaf:Person>
+<foaf:name>sajinie</foaf:name>
+<foaf:mbox_sha1sum>8117d2d658ba93bf3a2c792259647697c18cd5b5</foaf:mbox_sha1sum></foaf:Person></foaf:knows>
+<foaf:knows>
+<foaf:Person>
+<foaf:name>surani</foaf:name>
+<foaf:mbox_sha1sum>38e26121709ef54cc8c1ea0a9c64c280e4444efb</foaf:mbox_sha1sum></foaf:Person></foaf:knows>
+<foaf:knows>
+<foaf:Person>
+<foaf:name>prabodha</foaf:name>
+<foaf:mbox_sha1sum>00afbcb39e234203c8f3af121c2328632adf841a</foaf:mbox_sha1sum></foaf:Person></foaf:knows></foaf:Person>
+</rdf:RDF>
