@@ -1,58 +1,26 @@
 {
   "intents": [
     {
-      "label": "greeting",
-      "requests": [
-        "Hi",
-        "How are you",
-        "Is anyone there?",
-        "Hello",
-        "Good day"
-      ],
-      "responses": [
-        "Hello, thanks for visiting",
-        "Good to see you again",
-        "Hi there, how can I help?"
-      ]
-    },
-    {
-      "label": "goodbye",
-      "requests": [
-        "Bye",
-        "See you later",
-        "Goodbye"
-      ],
-      "responses": [
-        "See you later, thanks for visiting",
-        "Have a nice day",
-        "Bye! Come back again soon."
-      ]
-    },
-    {
-      "label": "thanks",
-      "requests": [
-        "Thanks",
-        "Thank you",
-        "That's helpful"
-      ],
-      "responses": [
-        "Happy to help!",
-        "Any time!",
-        "My pleasure"
-      ]
-    },
-    {
       "label":"sugar",
       "requests":[
         "what are the available wines with sugar level",
         "wines with sugar level",
         "what are the wines with sugar level",
         "what are the wines that have sugar level",
-        "what wines have sugar level"
+        "what wines have sugar level",
+        "what are the available wines with sugar concentration",
+        "wines with sugar concentration",
+        "what are the wines with sugar concentration",
+        "what are the wines that have sugar concentration",
+        "what wines have sugar concentration"
       ],
-      "responses":[
-        "about sugar level of wine"
-      ]
+      "response":{
+        "type": 1,
+        "positive": "These are the available wines with this sugar level",
+        "negative": "These are no wines available for the specified sugar level"
+      }
+
+
     },
     {
       "label":"flavor",
@@ -61,12 +29,17 @@
         "wines with flavor",
         "what are the wines with flavor",
         "what are the wines that have flavor",
-        "what wines have flavor"
+        "what wines have the flavor",
+        "what is the wine with the flavor",
+        "wines having the flavor"
+
 
       ],
-      "responses":[
-        "about flavor of the wine"
-      ]
+      "response":{
+        "type": 2,
+        "positive": "These are the available wines with this flavor",
+        "negative": "These are no wines available for the specified flavor"
+      }
     },
     {
       "label":"winery",
@@ -81,17 +54,25 @@
         "what wines are from"
 
       ],
-      "responses":[
-        "about winery"
-      ]
+      "response":{
+        "type": 3,
+        "positive": "These are the available wines made in this winery",
+        "negative": "These are no wines available from the specified winery"
+      }
     },{
       "label":"region",
       "requests":[
-        "what is the region of winery"
+        "what wineries are in the region",
+        "what wineries are in",
+        "what wineries are located in",
+        "what is the winery in",
+        "wineries in the region"
       ],
-      "responses":[
-        "about the region of the winery"
-      ]
+     "response":{
+        "type": 4,
+        "positive": "This is the region of this Winery",
+       "negative": "These is no such winery"
+      }
     }
   ]
 }

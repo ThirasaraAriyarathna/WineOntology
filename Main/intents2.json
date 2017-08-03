@@ -1,0 +1,37 @@
+{
+  "intents": [
+    {
+      "label": "aboutWines",
+      "features": [
+        "what is the sugar level of wine",
+        "sugar level of wine",
+        "what is the sugar content of the wine",
+        "sugar content of the wine",
+        "what is the sweetness of the wine",
+        "sweetness of the wine",
+
+        "what is the flavor of the wine",
+        "flavor of the wine",
+        "who is the maker of the wine",
+        "who is making the wine",
+        "the make of the wine",
+        "what is the body of the wine",
+        "body of the wine",
+        "the region of the wine",
+        "from where the wine comes from",
+        "where is wine made in",
+
+
+      ]
+    },
+    {
+      "label": "winesAbout",
+      "features": [
+
+      ]
+    },
+    {
+      "label": "about wine"
+    }
+  ]
+}

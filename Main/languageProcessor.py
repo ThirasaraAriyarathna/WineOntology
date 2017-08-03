@@ -2,101 +2,104 @@ import re
 import nltk
 import json
 import numpy as np
-import tensorflow as tf
-import tflearn
-from tensorflow.contrib import learn
 from nltk.stem.lancaster import LancasterStemmer
 from sklearn.ensemble import RandomForestClassifier
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import accuracy_score
 
-stemmer = LancasterStemmer()
+class LanguageProcessor():
 
-with open('intents.json') as json_data:
-    intents = json.load(json_data)
+    forest = RandomForestClassifier(n_estimators=100)
+    with open('intents.json') as json_data:
+        intents = json.load(json_data)
+    stemmer = LancasterStemmer()
+    vocabulary = []
+    classes = []
+    documents = []
+    ignore_words = ['?', '.', '!']
 
-words = []
-classes = []
-documents = []
-ignore_words = ['?', '.', '!']
+    def trainer(self):
 
-for intent in intents['intents']:
-    for pattern in intent['requests']:
-        w = nltk.word_tokenize(pattern)
-        words.extend(w)
-        documents.append((w, intent['label']))
-        if intent['label'] not in classes:
-            classes.append(intent['label'])
+        training = []
 
-words = [stemmer.stem(w.lower()) for w in words if w not in ignore_words]
-words = sorted(list(set(words)))
+        for doc in self.documents:
+            bag = []
+            pattern_words = doc[0]
+            pattern_words = [self.stemmer.stem(word.lower()) for word in pattern_words]
+            for w in self.vocabulary:
+                bag.append(1) if w in pattern_words else bag.append(0)
+            training.append([bag, self.classes.index(doc[1])])
 
-classes = sorted(list(set(classes)))
+        training = np.array(training)
 
-# training data for tf
+        x = list(training[:, 0])
+        y = list(training[:, 1])
 
-training = []
-output = []
+        # training model
+        x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.3)
+        self.forest.fit(x_train, y_train)
+        predictions = self.forest.predict(x_test)
+        print accuracy_score(y_test, predictions)
 
-output_empty = [0] * len(classes)
+    def intentIdentifier(self, inputString):
 
-for doc in documents:
-    bag = []
+        stemmedWords = self.tokenizer(inputString)
 
-    pattern_words = doc[0]
-
-    pattern_words = [stemmer.stem(word.lower()) for word in pattern_words]
-
-    for w in words:
-        bag.append(1) if w in pattern_words else bag.append(0)
-
-    output_row = list(output_empty)
-    output_row[classes.index(doc[1])] = 1
-
-    training.append([bag, output_row])
-# random.shuffle(training)
-
-training = np.array(training)
-
-xTrain = list(training[:, 0])
-yTrain = list(training[:, 1])
-
-forest = RandomForestClassifier(n_estimators=100)
-forest.fit(xTrain, yTrain)
-
-
-def intentIdentifier(inputString):
-
-    processedWords = tokenizer(inputString)
-
-    bag = []
-    for i in words:
-        if i in processedWords:
-            bag.append(1)
+        bag = []
+        for i in self.vocabulary:
+            if i in stemmedWords:
+                bag.append(1)
+            else:
+                bag.append(0)
+        predictedClass = self.forest.predict(bag)
+        if len(predictedClass) > 0:
+            print self.classes[predictedClass[0]]
+            return self.classes[predictedClass[0]]
         else:
-            bag.append(0)
-
-    print processedWords
-    print words
-    print classes
-    print documents
-    print xTrain
-    print yTrain
-    print classes
-    print
-    predictedClass = forest.predict(bag)
-    print predictedClass[0]
+            return ""
 
 
-def tokenizer(inputString):
+    def createVocabulary(self, domainWords):
 
-    # not necessary for this stage as the assumption is user inputs only one sentence.
-    # If more than one need to modify the code
-    inputSentences = nltk.sent_tokenize(inputString)
-    inputWords = [nltk.word_tokenize(sentence) for sentence in inputSentences]
-    z = [y for x in inputWords for y in x]
+        for intent in self.intents['intents']:
+            for domainWord in domainWords[intent['label']]:
+                d = re.findall('[A-Z][^A-Z]*', domainWord)
+                for pattern in intent['requests']:
+                    w = nltk.word_tokenize(pattern)
+                    w.extend(d)
+                    self.vocabulary.extend(w)
+                    self.documents.append((w, intent['label']))
+                    if intent['label'] not in self.classes:
+                        self.classes.append(intent['label'])
+        self.vocabulary = [self.stemmer.stem(w.lower()) for w in self.vocabulary if w not in self.ignore_words]
+        self.vocabulary = sorted(list(set(self.vocabulary)))
+        self.classes = sorted(list(set(self.classes)))
 
-    stemmedWords = [stemmer.stem(word.lower()) for word in z]
-    print inputString
-    print inputSentences
-    print inputWords
-    print z
-    return stemmedWords
+    def tokenizer(self, inputString):
+
+        # not necessary for this stage as the assumption is user inputs only one sentence.
+        # If more than one need to modify the code
+        inputSentences = nltk.sent_tokenize(inputString)
+        inputWords = [nltk.word_tokenize(sentence) for sentence in inputSentences]
+        flattenedWords = [y for x in inputWords for y in x]
+        stemmedWords = [self.stemmer.stem(word.lower()) for word in flattenedWords]
+        return stemmedWords
+
+    def getIntents(self):
+
+        arr = []
+        for intent in self.intents['intents']:
+            arr.append(intent['label'])
+        return arr
+
+    def entityExtractor(self, inputString, keywords):
+
+        entities = []
+        inputWords = nltk.word_tokenize(inputString)
+        for word in inputWords:
+            x = word.lower()
+            if x in keywords:
+                entities.append(word)
+        return entities
+
+
