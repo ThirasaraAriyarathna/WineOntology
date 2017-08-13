@@ -12,7 +12,7 @@ Possible questions
 '''
 class WineChatbot():
     keywords = {}
-    subjects = [("sugar", "hasSugar"), ("flavor", "hasFlavor"), ("winery", "hasMaker"), ("region", "locatedIn")]
+    subjects = [("sugar", "WineSugar"), ("flavor", "WineFlavor"), ("winery", "Winery"), ("region", "Region"), ("color", "WineColor", ("grape", "WineGrape"), ("body", "WineBody"))]
     languageProcessor = LanguageProcessor()
     queryGenerator = QueryGenerator()
 
