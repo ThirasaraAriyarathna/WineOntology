@@ -1,63 +1,97 @@
 {
   "intents": [
     {
-      "label": "aboutWines",
+      "label": "wine",
       "features": [
-        "what are the wines",
-        "what wines",
-        "wines",
-        "what are the red wines"
+        "wine <wine>",
+        "<wine> wine",
+        "<wine>"
+      ]
+    },
+    {
+      "label": "color",
+      "features": [
+        "<color> in color",
+        "<color> color",
+        "color <color>",
+        "pink color",
+        "<color> wines",
+        "<color> color wines"
+      ]
+    },
+    {
+      "label": "sugar",
+      "features": [
+        "low sugar",
+        "high sugar",
+        "moderate sugar",
+        "medium sugar",
+        "<sugar> sugar",
+        "<sugar> wines"
 
+      ]
+    },
+    {
+      "label": "flavor",
+      "features": [
+        "flavor of <flavor>",
+        "taste of <flavor>",
+        "<flavor> taste",
+        "<flavor> wines",
+        "<flavor> flavor"
 
 
       ]
     },
     {
-      "label": "aboutColor",
+      "label": "body",
       "features": [
+        "<body> body",
+        "<body> bodied",
+        "body of <body>"
 
       ]
     },
     {
-      "label": "aboutSugar",
+      "label": "grape",
       "features": [
+        "made from <grape> grape",
+        "made using <grape> grape",
+        "made from <grape>",
+        "made using <grape>",
+        "prepared from <grape> grape",
+        "prepared using <grape> grape",
+        "prepared from <grape>",
+        "prepared using <grape>"
 
       ]
     },
     {
-      "label": "aboutFlavor",
+      "label": "maker",
       "features": [
+        "produced by <maker>",
+        "made by <maker>",
+        "made in <maker> winery",
+        "produced in <maker> winery",
+        "produced by <maker> winery",
+        "made by <maker> winery",
+        "made in <maker>",
+        "produced in <maker>"
 
       ]
     },
     {
-      "label": "aboutBody",
+      "label": "region",
       "features": [
-
-      ]
-    },
-    {
-      "label": "aboutGrape",
-      "features": [
-
-      ]
-    },
-    {
-      "label": "aboutMaker",
-      "features": [
-
-      ]
-    },
-    {
-      "label": "aboutRegion",
-      "features": [
-
-      ]
-    },
-    {
-      "label": "aboutGrapeNumber",
-      "features": [
-
+        "<region> wines",
+        "made in <region> region",
+        "made in <region>",
+        "from <region>",
+        "from <region> region",
+        "winery located in <region>",
+        "produced in <region>",
+        "the native region is <region>",
+        "the native country is <region>"
       ]
     }
   ]

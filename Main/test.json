@@ -1,0 +1,452 @@
+{
+  "tests":[
+    {
+      "test": "what are the red wines available?",
+      "response": {
+        "intent": "aboutWine",
+        "wine": 0,
+        "color": 1,
+        "sugar": 0,
+        "flavor": 0,
+        "body": 0,
+        "grape": 0,
+        "maker": 0,
+        "region":0
+      }
+    },
+    {
+      "test": "wines made in australia with strong flavor?",
+      "response": {
+        "intent": "aboutWine",
+        "wine": 0,
+        "color": 0,
+        "sugar": 0,
+        "flavor": 1,
+        "body": 0,
+        "grape": 0,
+        "maker": 0,
+        "region":1
+      }
+    },
+    {
+      "test": "white wines made from pinotnoir grape and made in Italy",
+      "response": {
+        "intent": "aboutWine",
+        "wine": 0,
+        "color": 1,
+        "sugar": 0,
+        "flavor": 0,
+        "body": 0,
+        "grape": 1,
+        "maker": 0,
+        "region":1
+      }
+    },
+    {
+      "test": "what wines have low sugar level and full body which are made from merlot",
+      "response": {
+        "intent": "aboutWine",
+        "wine": 0,
+        "color": 0,
+        "sugar": 1,
+        "flavor": 0,
+        "body": 1,
+        "grape": 1,
+        "maker": 0,
+        "region":0
+      }
+    },
+    {
+      "test": "what is the color of mountadam pinotnoir",
+      "response": {
+        "intent": "aboutColor",
+        "wine": 1,
+        "color": 0,
+        "sugar": 0,
+        "flavor": 0,
+        "body": 0,
+        "grape": 0,
+        "maker": 0,
+        "region":0
+      }
+    },
+    {
+      "test": "color of wines made in US with delicate flavor",
+      "response": {
+        "intent": "aboutColor",
+        "wine": 0,
+        "color": 0,
+        "sugar": 0,
+        "flavor": 1,
+        "body": 0,
+        "grape": 0,
+        "maker": 0,
+        "region":1
+      }
+    },
+    {
+      "test": "which color is the wine with medium body made by closdevougeot winery",
+      "response": {
+        "intent": "aboutColor",
+        "wine": 0,
+        "color": 0,
+        "sugar": 0,
+        "flavor": 0,
+        "body": 1,
+        "grape": 0,
+        "maker": 1,
+        "region":0
+      }
+    },
+    {
+      "test": "what are the colors of the french sweet wines with strong flavor",
+      "response": {
+        "intent": "aboutColor",
+        "wine": 0,
+        "color": 0,
+        "sugar": 1,
+        "flavor": 1,
+        "body": 0,
+        "grape": 0,
+        "maker": 0,
+        "region":1
+      }
+    },
+    {
+      "test": "wines made in australia with strong flavor?",
+      "response": {
+        "intent": "aboutSugar",
+        "wine": 0,
+        "color": 1,
+        "sugar": 0,
+        "flavor": 0,
+        "body": 0,
+        "grape": 0,
+        "maker": 0,
+        "region":0
+      }
+    },
+    {
+      "test": "wines made in australia with strong flavor?",
+      "response": {
+        "intent": "aboutSugar",
+        "wine": 0,
+        "color": 1,
+        "sugar": 0,
+        "flavor": 0,
+        "body": 0,
+        "grape": 0,
+        "maker": 0,
+        "region":0
+      }
+    },
+    {
+      "test": "wines made in australia with strong flavor?",
+      "response": {
+        "intent": "aboutSugar",
+        "wine": 0,
+        "color": 1,
+        "sugar": 0,
+        "flavor": 0,
+        "body": 0,
+        "grape": 0,
+        "maker": 0,
+        "region":0
+      }
+    },
+    {
+      "test": "wines made in australia with strong flavor?",
+      "response": {
+        "intent": "aboutSugar",
+        "wine": 0,
+        "color": 1,
+        "sugar": 0,
+        "flavor": 0,
+        "body": 0,
+        "grape": 0,
+        "maker": 0,
+        "region":0
+      }
+    },
+    {
+      "test": "wines made in australia with strong flavor?",
+      "response": {
+        "intent": "aboutFlavor",
+        "wine": 0,
+        "color": 1,
+        "sugar": 0,
+        "flavor": 0,
+        "body": 0,
+        "grape": 0,
+        "maker": 0,
+        "region":0
+      }
+    },
+    {
+      "test": "wines made in australia with strong flavor?",
+      "response": {
+        "intent": "aboutFlavor",
+        "wine": 0,
+        "color": 1,
+        "sugar": 0,
+        "flavor": 0,
+        "body": 0,
+        "grape": 0,
+        "maker": 0,
+        "region":0
+      }
+    },
+    {
+      "test": "wines made in australia with strong flavor?",
+      "response": {
+        "intent": "aboutFlavor",
+        "wine": 0,
+        "color": 1,
+        "sugar": 0,
+        "flavor": 0,
+        "body": 0,
+        "grape": 0,
+        "maker": 0,
+        "region":0
+      }
+    },
+    {
+      "test": "wines made in australia with strong flavor?",
+      "response": {
+        "intent": "aboutFlavor",
+        "wine": 0,
+        "color": 1,
+        "sugar": 0,
+        "flavor": 0,
+        "body": 0,
+        "grape": 0,
+        "maker": 0,
+        "region":0
+      }
+    },
+    {
+      "test": "wines made in australia with strong flavor?",
+      "response": {
+        "intent": "aboutBody",
+        "wine": 0,
+        "color": 1,
+        "sugar": 0,
+        "flavor": 0,
+        "body": 0,
+        "grape": 0,
+        "maker": 0,
+        "region":0
+      }
+    },
+    {
+      "test": "wines made in australia with strong flavor?",
+      "response": {
+        "intent": "aboutBody",
+        "wine": 0,
+        "color": 1,
+        "sugar": 0,
+        "flavor": 0,
+        "body": 0,
+        "grape": 0,
+        "maker": 0,
+        "region":0
+      }
+    },
+    {
+      "test": "wines made in australia with strong flavor?",
+      "response": {
+        "intent": "aboutBody",
+        "wine": 0,
+        "color": 1,
+        "sugar": 0,
+        "flavor": 0,
+        "body": 0,
+        "grape": 0,
+        "maker": 0,
+        "region":0
+      }
+    },
+    {
+      "test": "wines made in australia with strong flavor?",
+      "response": {
+        "intent": "aboutBody",
+        "wine": 0,
+        "color": 1,
+        "sugar": 0,
+        "flavor": 0,
+        "body": 0,
+        "grape": 0,
+        "maker": 0,
+        "region":0
+      }
+    },
+    {
+      "test": "wines made in australia with strong flavor?",
+      "response": {
+        "intent": "aboutGrape",
+        "wine": 0,
+        "color": 1,
+        "sugar": 0,
+        "flavor": 0,
+        "body": 0,
+        "grape": 0,
+        "maker": 0,
+        "region":0
+      }
+    },
+    {
+      "test": "wines made in australia with strong flavor?",
+      "response": {
+        "intent": "aboutGrape",
+        "wine": 0,
+        "color": 1,
+        "sugar": 0,
+        "flavor": 0,
+        "body": 0,
+        "grape": 0,
+        "maker": 0,
+        "region":0
+      }
+    },
+    {
+      "test": "wines made in australia with strong flavor?",
+      "response": {
+        "intent": "aboutGrape",
+        "wine": 0,
+        "color": 1,
+        "sugar": 0,
+        "flavor": 0,
+        "body": 0,
+        "grape": 0,
+        "maker": 0,
+        "region":0
+      }
+    },
+    {
+      "test": "wines made in australia with strong flavor?",
+      "response": {
+        "intent": "aboutGrape",
+        "wine": 0,
+        "color": 1,
+        "sugar": 0,
+        "flavor": 0,
+        "body": 0,
+        "grape": 0,
+        "maker": 0,
+        "region":0
+      }
+    },
+    {
+      "test": "wines made in australia with strong flavor?",
+      "response": {
+        "intent": "aboutMaker",
+        "wine": 0,
+        "color": 1,
+        "sugar": 0,
+        "flavor": 0,
+        "body": 0,
+        "grape": 0,
+        "maker": 0,
+        "region":0
+      }
+    },
+    {
+      "test": "wines made in australia with strong flavor?",
+      "response": {
+        "intent": "aboutMaker",
+        "wine": 0,
+        "color": 1,
+        "sugar": 0,
+        "flavor": 0,
+        "body": 0,
+        "grape": 0,
+        "maker": 0,
+        "region":0
+      }
+    },
+    {
+      "test": "wines made in australia with strong flavor?",
+      "response": {
+        "intent": "aboutMaker",
+        "wine": 0,
+        "color": 1,
+        "sugar": 0,
+        "flavor": 0,
+        "body": 0,
+        "grape": 0,
+        "maker": 0,
+        "region":0
+      }
+    },
+    {
+      "test": "wines made in australia with strong flavor?",
+      "response": {
+        "intent": "aboutMaker",
+        "wine": 0,
+        "color": 1,
+        "sugar": 0,
+        "flavor": 0,
+        "body": 0,
+        "grape": 0,
+        "maker": 0,
+        "region":0
+      }
+    },
+    {
+      "test": "wines made in australia with strong flavor?",
+      "response": {
+        "intent": "aboutRegion",
+        "wine": 0,
+        "color": 1,
+        "sugar": 0,
+        "flavor": 0,
+        "body": 0,
+        "grape": 0,
+        "maker": 0,
+        "region":0
+      }
+    },
+    {
+      "test": "wines made in australia with strong flavor?",
+      "response": {
+        "intent": "aboutRegion",
+        "wine": 0,
+        "color": 1,
+        "sugar": 0,
+        "flavor": 0,
+        "body": 0,
+        "grape": 0,
+        "maker": 0,
+        "region":0
+      },
+      {
+      "test": "wines made in australia with strong flavor?",
+      "response": {
+        "intent": "aboutRegion",
+        "wine": 0,
+        "color": 1,
+        "sugar": 0,
+        "flavor": 0,
+        "body": 0,
+        "grape": 0,
+        "maker": 0,
+        "region":0
+      }
+    },
+    {
+      "test": "wines made in australia with strong flavor?",
+      "response": {
+        "intent": "aboutRegion",
+        "wine": 0,
+        "color": 1,
+        "sugar": 0,
+        "flavor": 0,
+        "body": 0,
+        "grape": 0,
+        "maker": 0,
+        "region":0
+      }
+    }
+  ]
+
+}

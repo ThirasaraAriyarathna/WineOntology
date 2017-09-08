@@ -92,14 +92,17 @@ class LanguageProcessor():
             arr.append(intent['label'])
         return arr
 
-    def entityExtractor(self, inputString, keywords):
+    def entityExtractor(self, conditions, inputString, keywords):
 
-        entities = []
         inputWords = nltk.word_tokenize(inputString)
-        for word in inputWords:
-            x = word.lower()
-            if x in keywords:
-                entities.append(word)
-        return entities
+        for key in conditions:
+            if conditions[key][0] ==1:
+                for word in inputWords:
+                    if word in keywords[key]:
+                        conditions[key][1] = word
+                        break
+        return conditions
+
+
 
 

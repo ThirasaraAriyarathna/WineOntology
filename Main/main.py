@@ -12,7 +12,7 @@ Possible questions
 '''
 class WineChatbot():
     keywords = {}
-    subjects = [("sugar", "WineSugar"), ("flavor", "WineFlavor"), ("winery", "Winery"), ("region", "Region"), ("color", "WineColor", ("grape", "WineGrape"), ("body", "WineBody"))]
+    subjects = [("sugar", "WineSugar"), ("flavor", "WineFlavor"), ("maker", "Winery"), ("region", "Region"), ("color", "WineColor"), ("grape", "WineGrape"), ("body", "WineBody"), ("wine", "hasMaker")]
     languageProcessor = LanguageProcessor()
     queryGenerator = QueryGenerator()
 
@@ -26,8 +26,8 @@ class WineChatbot():
             if len(intent) == 0:
                 print "Try another way"
             else:
-                arr = [w.lower() for w in self.keywords[intent]]
-                entities = self.languageProcessor.entityExtractor(req, arr)
+                # arr = [w.lower() for w in self.keywords[intent]]
+                entities = self.languageProcessor.entityExtractor(req, intent, self.keywords)
                 if len(entities) > 0:
                     results = self.queryGenerator.processor(intent, False, entities)
                     for key in results:
@@ -37,14 +37,22 @@ class WineChatbot():
                     print "No any specific keywords found. Please make your question more specific"
             req = raw_input("bot$ ")
 
+    # def getInfo(self):
+    #
+    #     for subject in self.subjects:
+    #         results = self.queryGenerator.processor("info", True, [subject[1]])
+    #         self.keywords[subject[0]] = results["keywords"]
+    #     print self.keywords
+
     def getInfo(self):
 
         for subject in self.subjects:
-            results = self.queryGenerator.processor("info", True, [subject[1]])
-            self.keywords[subject[0]] = results["keywords"]
+            queryElements = self.queryGenerator.assembler("info",  subject)
+            results = self.queryGenerator.queryExecuter(queryElements[0], queryElements[1])
+            self.keywords[subject[0]] = results
         print self.keywords
 
 
 chatbot = WineChatbot()
 chatbot.getInfo()
-chatbot.main()
+# chatbot.main()

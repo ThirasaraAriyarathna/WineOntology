@@ -5,6 +5,7 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
 
+
 class Trainer():
 
     classifier = any()
@@ -60,6 +61,7 @@ class Trainer():
         x = list(training[:, 0])
         y = list(training[:, 1])
         return x, y
+
 
 threshold = raw_input("Enter the threshold accuracy (between 0 and 1)")
 accuracy = 0
