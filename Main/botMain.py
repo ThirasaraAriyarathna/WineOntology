@@ -3,6 +3,7 @@ from conditionClassifier import ConditionClassifier
 from entityExtractor import EntityExtractor
 from queryGenerator import QueryGenerator
 from chunker import Chuncker
+from chunker import UnigramChunker
 
 
 class WineChatbot:
@@ -24,6 +25,8 @@ class WineChatbot:
                 print "Didn't get it! Try another way"
             else:
                 chunks = self.chunker.chunck(req)
+                tagged_chunks = chunks[1]
+                chunks = chunks[0]
                 conditions = self.conditionClassifier.conditionIndentifier(intent, chunks)
                 hasMeaning = False
                 for key in conditions:

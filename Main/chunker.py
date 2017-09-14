@@ -3,6 +3,7 @@ import json
 import re
 import string
 from queryGenerator import QueryGenerator
+from nltk.stem.porter import PorterStemmer
 import pickle
 
 class Chuncker:
@@ -14,6 +15,7 @@ class Chuncker:
     subjects = [("sugar", "WineSugar"), ("flavor", "WineFlavor"), ("maker", "Winery"), ("region", "Region"),
                 ("color", "WineColor"), ("grape", "WineGrape"), ("body", "WineBody"), ("wine", "hasMaker")]
     queryGenerator = QueryGenerator()
+
 
     def __init__(self):
         filename = "UnigramChunker.sav"
@@ -66,8 +68,18 @@ class Chuncker:
         for subtree in chunked_sent.subtrees():
             if subtree.label() == 'NP':
                 words = [w for w, t in subtree.leaves()]
-                chunks.append(' '.join(words))
+                tags = [t for w, t in subtree.leaves()]
+                concecutive = 0
+                if tags[0] == 'JJ' and tags[1] != 'VBZ':
+                    for i in range(1, len(tags)):
+                        if tags[i] == 'JJ':
+                            chunks.append(words[i-1] + ' wine')
+                        else:
+                            chunks.append(words[i-1] + ' ' + PorterStemmer().stem(words.index(words[i])))
+                else:
+                    chunks.append(' '.join(words))
                 tagged_chunks.append(subtree.leaves())
+        print chunks
         return chunks, tagged_chunks
 
     def createTrainingSet(self):
@@ -77,8 +89,9 @@ class Chuncker:
                             {<VBD|VBN>?<IN><JJ|NN|NNP|NNS><NN|NNP|NNS>?}
                             {<VBD|VBN><VBG><JJ|NN|NNP|NNS><NN|NNP|NNS>?}
                             {<JJ><NN><VBZ><JJ|NN|NNP|NNS><NN|NNP|NNS>?}
-                            {<JJ>+<NN|NNS|NNP|VBD>}
+                            {<JJ>+<VBD|VBN|NN|NNS|NNP>}
                             {<NN><NN|VBD>}
+                            {<NN|NNS|NNP>}
                           """
         cp = nltk.RegexpParser(grammar)
         train_sents = []

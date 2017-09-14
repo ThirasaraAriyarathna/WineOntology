@@ -42,8 +42,11 @@ class IntentClassifier:
             for subject in self.subjects:
                 keywords = self.domainWords[subject[0]]
                 for feature in intent["features"]:
-                    for keyword in keywords:
-                        self.vocabulary[intent["label"]].append(re.sub('<' + subject[0] + '>', keyword.lower(), feature))
+                    if "<" and ">" in feature:
+                        for keyword in keywords:
+                            self.vocabulary[intent["label"]].append(re.sub('<' + subject[0] + '>', keyword.lower(), feature))
+                    else:
+                        self.vocabulary[intent["label"]].append(feature)
 
     def inputProcessing(self, input, isTrain):
         arr = [char for char in input if char not in string.punctuation]
@@ -73,14 +76,14 @@ class IntentClassifier:
 
     def trainer(self):
         trainSet = self.createTrainingSet()
-        print trainSet
+        # print trainSet
         xTrain = list(trainSet[:, 0])
         yTrain = list(trainSet[:, 1])
         countVectorizer = CountVectorizer(ngram_range=(1, 2), token_pattern=r'\b\w+\b', min_df=1)
         xTrainCounts = countVectorizer.fit_transform(xTrain)
         tfTransformer = TfidfTransformer()
         xTrainTf = tfTransformer.fit_transform(xTrainCounts)
-        clf = svm.SVC(kernel='rbf', max_iter=-1)
+        clf = svm.SVC(kernel='rbf', max_iter=-1, gamma=0.1)
         x_train, x_test, y_train, y_test = train_test_split(xTrainTf, yTrain, test_size=0.3)
         clf.fit(x_train, y_train)
         predictions = clf.predict(x_test)
@@ -88,7 +91,7 @@ class IntentClassifier:
         vec_clf = Pipeline([('vectorizer', countVectorizer), ('tfVectorizer', tfTransformer), ('clf', clf)])
         filename = 'intentClassifier.sav'
         joblib.dump(vec_clf, "ModelData/" + filename)
-        print "Classifier successfully trained"
+        print "Intent classifier successfully trained"
 
     def intentIdentifier(self, input):
 
@@ -101,9 +104,9 @@ class IntentClassifier:
             return self.intents["intents"][int(result[0])]["label"]
 
 
-# intentClassifier = IntentClassifier()
-# intentClassifier.getDomainWords()
-# intentClassifier.createVocabulary()
+intentClassifier = IntentClassifier()
+intentClassifier.getDomainWords()
+intentClassifier.createVocabulary()
 # print intentClassifier.vocabulary
-# intentClassifier.trainer()
+intentClassifier.trainer()
 # intentClassifier.intentIdentifier("")

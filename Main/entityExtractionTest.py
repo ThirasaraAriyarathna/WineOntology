@@ -1,13 +1,13 @@
 import nltk, re, pprint
 from nltk.corpus import conll2000
 
-# input = raw_input("Enter the question: ")
-# sentences = nltk.sent_tokenize(input)
-# print sentences
-# sentences = [nltk.word_tokenize(sent) for sent in sentences]
-# print sentences
-# sentences = [nltk.pos_tag(sent) for sent in sentences]
-# print sentences
+input = raw_input("Enter the question: ")
+sentences = nltk.sent_tokenize(input)
+print sentences
+sentences = [nltk.word_tokenize(sent) for sent in sentences]
+print sentences
+sentences = [nltk.pos_tag(sent) for sent in sentences]
+print sentences
 # grammar = "NP: {<DT>?<JJ>*<NNS|NN>}"
 # cp = nltk.RegexpParser(grammar)
 # for sent in sentences:
@@ -30,11 +30,11 @@ class UnigramChunker(nltk.ChunkParserI):
                      in zip(sentence, chunktags)]
         return nltk.chunk.conlltags2tree(conlltags)
 
-test_sents = conll2000.chunked_sents('test.txt', chunk_types=['NP'])
-train_sents = conll2000.chunked_sents('train.txt', chunk_types=['NP'])
-print train_sents
-unigram_chunker = UnigramChunker(train_sents)
+# test_sents = conll2000.chunked_sents('test.txt', chunk_types=['NP'])
+# train_sents = conll2000.chunked_sents('train.txt', chunk_types=['NP'])
+# print train_sents
+# unigram_chunker = UnigramChunker(train_sents)
 # sentences = nltk.word_tokenize("How are you doing my baby")
 # sentences = nltk.pos_tag(sentences)
 # print unigram_chunker.parse(sentences)
-print(unigram_chunker.evaluate(test_sents))
+# print(unigram_chunker.evaluate(test_sents))

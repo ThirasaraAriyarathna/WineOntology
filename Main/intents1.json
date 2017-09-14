@@ -3,171 +3,104 @@
     {
       "label": "aboutWine",
       "features": [
-        "what are the wines",
         "wines with",
         "wines having",
         "wines that have",
         "wines which have",
-        "wines made in",
-        "wines from",
-        "wines produced by",
-        "wines which are",
-        "<region> wines with",
-        "<region> wines having",
-        "<region> wines produced by",
-        "what are the <region> wines",
-        "<color> wines from",
-        "<color> wines made in",
-        "<color> wines produced by",
-        "<color> wines with",
-        "<color> wines having",
-        "what are the <color> wines",
-        "what are the <color> wines made in",
-        "what are the <body> bodied wines with",
-        "what are the <body> wines with",
-        "<body> bodied wines with",
-        "<body> wines with"
-
-
-
-
-
+        "wines"
       ]
     },
     {
       "label": "aboutColor",
       "features": [
-        "what is the color of wine <wine>",
-        "what is the color of <wine>",
-        "what color is the <wine>",
-        "what color is the wine <wine>",
-        "color of <wine>",
-        "which color is <wine>",
-        "which color is the wine <wine>",
-        "what is the color of <region> wine",
-        "what color is the the <region> wine",
-        "what are the colors of <region> wines",
-        "color of <region> wine",
-        "which color is the <region> wine",
-        "what is the color of <body> bodied wine",
-        "what is the color of <body> wine",
-        "color of <body> bodied wines",
-        "color of <body> wines",
-        "what color is the <flavor> flavored wine",
-        "what is the color of <flavor> flavored wine",
-        "color of <flavor> flavored wine",
-        "which color is the <flavor> flavored wine",
-        "what is the color of the wine",
-        "what color is the wine",
-        "which color is the wine",
-        "color of the wine"
-
-
-
-
+        "color of",
+        "color is the",
+        "colors are"
       ]
     },
     {
       "label": "aboutSugar",
       "features": [
-        "what is the sugar level of wine <wine>",
-        "what is the sugar level of <wine>",
-        "sugar level of <wine>",
-        "what is the sugar level of <region> wine",
-        "what are the sugar levels of <region> wines",
-        "sugar level of <region> wine",
-        "what is the sugar level of <body> bodied wine",
-        "what is the sugar level of <body> wine",
-        "sugar level of <body> bodied wines",
-        "sugar level of <body> wines",
-        "what is the sugar level of <flavor> flavored wine",
-        "sugar level of <flavor> flavored wine",
-        "what is the sugar level of the wine",
-        "sugar level of the wine",
-        "what is the sugar content of wine <wine>",
-        "what is the sugar content of <wine>",
-        "sugar content of <wine>",
-        "what is the sugar content of <region> wine",
-        "what are the sugar contents of <region> wines",
-        "sugar content of <region> wine",
-        "what is the sugar content of <body> bodied wine",
-        "what is the sugar content of <body> wine",
-        "sugar content of <body> bodied wines",
-        "sugar content of <body> wines",
-        "what is the sugar content of <flavor> flavored wine",
-        "sugar content of <flavor> flavored wine",
-        "what is the sugar content of the wine",
-        "sugar content of the wine",
-        "how sweet is the wine",
-        "how sweet is the <color> wine",
-        "how sweet is the <flavor> flavored wine",
-        "how sweet is the <region> wine",
-        "how sweet is the <body> bodied wine",
-        "what is the sugar concentration of wine <wine>",
-        "what is the sugar concentration of <wine>",
-        "sugar concentration of <wine>",
-        "what is the sugar concentration of <region> wine",
-        "what are the sugar concentrations of <region> wines",
-        "sugar concentration of <region> wine",
-        "what is the sugar concentration of <body> bodied wine",
-        "what is the sugar concentration of <body> wine",
-        "sugar concentration of <body> bodied wines",
-        "sugar concentration of <body> wines",
-        "what is the sugar concentration of <flavor> flavored wine",
-        "sugar concentration of <flavor> flavored wine",
-        "what is the sugar concentration of the wine",
-        "sugar concentration of the wine",
-        "what is the sweetness of wine <wine>",
-        "what is the sweetness of <wine>",
-        "sweetness of <wine>",
-        "what is the sweetness of <region> wine",
-        "what are the sweetnesss of <region> wines",
-        "sweetness of <region> wine",
-        "what is the sweetness of <body> bodied wine",
-        "what is the sweetness of <body> wine",
-        "sweetness of <body> bodied wines",
-        "sweetness of <body> wines",
-        "what is the sweetness of <flavor> flavored wine",
-        "sweetness of <flavor> flavored wine",
-        "what is the sweetness of the wine",
-        "sweetness of the wine"
-
-
+        "sweetness of",
+        "sweetness in",
+        "sugar concentration of",
+        "sugar concentration in",
+        "sugar level of",
+        "sugar level in",
+        "sweet is",
+        "sugar content of",
+        "sugar content of"
       ]
     },
     {
       "label": "aboutFlavor",
       "features": [
-        "what is the flavor of wine <wine>",
-        "what is the flavor of <wine>",
-        "what flavor is the <wine>",
-        "what flavor is the wine <wine>",
-        "flavor of <wine>",
-        "which flavor is <wine>",
-        "which flavor is the wine <wine>",
-        "what is the flavor of <region> wine",
-        "what flavor is the the <region> wine",
-        "what are the flavors of <region> wines",
-        "flavor of <region> wine",
-        "which flavor is the <region> wine",
-        "what is the flavor of <body> bodied wine",
-        "what is the flavor of <body> wine",
-        "flavor of <body> bodied wines",
-        "flavor of <body> wines",
-        "what flavor is the <color> color wine",
-        "what flavor is the <color> wine",
-        "what is the flavor of <color> color wine",
-        "what is the flavor of <color> wine",
-        "flavor of <color> color wine",
-        "flavor of <color> wine",
-        "which flavor is the <color> color wine",
-        "which flavor is the <color> wine",
-        "what is the flavor of the wine",
-        "what flavor is the wine",
-        "which flavor is the wine",
-        "flavor of the wine"
-
+        "flavor of",
+        "flavor is the",
+        "flavor in",
+        "flavors are",
+        "taste of",
+        "taste is the",
+        "taste in",
+        "taste are"
+      ]
+    },
+    {
+      "label": "aboutBody",
+      "features": [
+        "body of",
+        "body type of",
+        "body types"
+      ]
+    },
+    {
+      "label": "aboutRegion",
+      "features": [
+        "from where the",
+        "region of the",
+        "native region of",
+        "native country of",
+        "native land of",
+        "in which country",
+        "in which region",
+        "where is ",
+        "in what country",
+        "in which region"
+      ]
+    },
+    {
+      "label": "aboutGrape",
+      "features": [
+        "from what grape",
+        "from which grape",
+        "using what grape",
+        "using which grape",
+        "the ingredients",
+        "from which ingredients",
+        "from what ingredients",
+        "from what",
+        "what grape is used",
+        "grape used",
+        "grapes are used",
+        "grape of"
+      ]
+    },
+    {
+      "label": "aboutMaker",
+      "features": [
+        "winery of",
+        "in which winery",
+        "in what winery",
+        "who is the producer",
+        "who is the maker",
+        "who produces",
+        "who makes",
+        "winery is",
+        "what maker",
+        "what producer",
+        "from what winery"
       ]
     }
+
   ]
 }

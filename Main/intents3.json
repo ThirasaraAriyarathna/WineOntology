@@ -3,34 +3,25 @@
     {
       "label": "wine",
       "features": [
-        "wine <wine>",
-        "<wine> wine",
         "<wine>"
       ]
     },
     {
       "label": "color",
       "features": [
-        "<color> in color",
-        "<color> color",
-        "color <color>",
-        "<color> wines"
+        "<color>",
+        "pink"
       ]
     },
     {
       "label": "sugar",
       "features": [
-        "low sugar",
+        "low",
         "high sugar",
         "moderate sugar",
         "medium sugar",
         "<sugar> sugar",
-        "<sugar> wines",
-        "<sugar> sweetness",
-        "low sweetness",
-        "high sweetness",
-        "moderate sweetness",
-        "medium sweetness"
+        "<sugar> wines"
 
       ]
     },
@@ -42,7 +33,7 @@
         "<flavor> taste",
         "<flavor> wines",
         "<flavor> flavor",
-        "taste <flavor>"
+        "tastes <flavor> flavor"
 
 
       ]
@@ -60,19 +51,10 @@
       "label": "grape",
       "features": [
         "<grape> grape",
+        "using <grape> grape",
+        "using <grape>",
         "<grape>"
 
-      ]
-    },
-    {
-      "label": "region",
-      "features": [
-        "<region> wines",
-        "<region> region",
-        "region <region>",
-        "<region>",
-        "located in <region>",
-        "is <region>"
       ]
     },
     {
@@ -80,6 +62,17 @@
       "features": [
         "<maker>",
         "<maker> winery"
+      ]
+    },
+    {
+      "label": "region",
+      "features": [
+        "<region> wines",
+        "<region> region",
+        "<region>",
+        "located in <region>",
+        "native region is <region>",
+        "native country is <region>"
       ]
     }
   ]
