@@ -56,10 +56,10 @@ class IntentClassifier:
         if isTrain:
             stemmedSent = ' '.join(stemmedWords)
         else:
-            if len(stemmedWords) < 5:
+            if len(stemmedWords) < 6:
                 stemmedSent = ' '.join(stemmedWords)
             else:
-                stemmedSent = ' '.join(stemmedWords[:5])
+                stemmedSent = ' '.join(stemmedWords[:6])
         return stemmedSent
 
 
@@ -104,9 +104,9 @@ class IntentClassifier:
             return self.intents["intents"][int(result[0])]["label"]
 
 
-intentClassifier = IntentClassifier()
-intentClassifier.getDomainWords()
-intentClassifier.createVocabulary()
+# intentClassifier = IntentClassifier()
+# intentClassifier.getDomainWords()
+# intentClassifier.createVocabulary()
 # print intentClassifier.vocabulary
-intentClassifier.trainer()
+# intentClassifier.trainer()
 # intentClassifier.intentIdentifier("")

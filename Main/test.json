@@ -1,7 +1,7 @@
 {
   "tests":[
     {
-      "test": "what are the red wines available?",
+      "test": "what are the available red wines?",
       "response": {
         "intent": "aboutWine",
         "wine": 0,
@@ -43,7 +43,7 @@
       }
     },
     {
-      "test": "what wines have low sugar level and full body which are made from merlot",
+      "test": "what wines have low sugar and full body which are made from merlot",
       "response": {
         "intent": "aboutWine",
         "wine": 0,
@@ -113,7 +113,7 @@
       }
     },
     {
-      "test": "wines made in australia with strong flavor?",
+      "test": "wines made in australia with strong flavor",
       "response": {
         "intent": "aboutSugar",
         "wine": 0,

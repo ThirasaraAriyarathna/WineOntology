@@ -8,6 +8,8 @@ sentences = [nltk.word_tokenize(sent) for sent in sentences]
 print sentences
 sentences = [nltk.pos_tag(sent) for sent in sentences]
 print sentences
+# sentences = [nltk.ne_chunk(sent) for sent in sentences]
+# print sentences
 # grammar = "NP: {<DT>?<JJ>*<NNS|NN>}"
 # cp = nltk.RegexpParser(grammar)
 # for sent in sentences:
@@ -38,3 +40,22 @@ class UnigramChunker(nltk.ChunkParserI):
 # sentences = nltk.pos_tag(sentences)
 # print unigram_chunker.parse(sentences)
 # print(unigram_chunker.evaluate(test_sents))
+
+# First, you're going to need to import wordnet:
+# from nltk.corpus import wordnet
+
+# Then, we're going to use the term "program" to find synsets like so:
+# syns = wordnet.synsets("low")
+
+# An example of a synset:
+# print(syns[0].name())
+
+# Just the word:
+# for word in syns:
+#     print(word.lemmas()[0].name())
+
+# Definition of that first synset:
+# print(syns[0].definition())
+
+# Examples of the word in use in sentences:
+# print(syns[0].examples())

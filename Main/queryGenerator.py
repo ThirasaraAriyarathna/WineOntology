@@ -27,7 +27,7 @@ class QueryGenerator:
                    "region": '''{@wine@ wine:locatedIn @o@.} 
                                  union {?baseWine rdfs:subClassOf ?restriction. ?restriction owl:onProperty wine:locatedIn. ?restriction owl:hasValue @o@. @wine@ a ?baseWine.} 
                                  union {?baseWine owl:intersectionOf ?list. ?list rdf:rest* [ rdf:first ?item ]. ?item owl:onProperty wine:locatedIn. ?item owl:hasValue @o@. @wine@ a ?baseWine.}. 
-                                 NOT EXISTS{?wine a wine:Region}. ''',
+                                  ''',
                    "grape": '''{?wine wine:madeFromGrape @o@.}
                                 union {?baseWine rdfs:subClassOf ?restriction. ?restriction owl:onProperty wine:madeFromGrape. ?restriction owl:hasValue @o@. ?wine a ?baseWine.} 
                                 union {?baseWine owl:intersectionOf ?list. ?list rdf:rest* [ rdf:first ?item ]. ?item owl:onProperty wine:madeFromGrape. ?item owl:hasValue @o@. ?wine a ?baseWine.} 
@@ -67,7 +67,7 @@ class QueryGenerator:
             # elif intent == "aboutRegion":
             #     pass
             if entities["wine"] == 1:
-                queryCore = re.sub('@wine@', "wine" + entities["wine"][1], queryCore)
+                queryCore = re.sub('@wine@', "wine:" + entities["wine"][1], queryCore)
             else:
                 for key in entities:
                     if entities[key][0] == 1:

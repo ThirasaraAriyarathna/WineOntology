@@ -1,5 +1,5 @@
 
-from queryGenerator import QueryGenerator
+from Main.queryGenerator import QueryGenerator
 from languageProcessor import LanguageProcessor
 
 '''

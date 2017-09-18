@@ -14,7 +14,7 @@
         "<color> in color",
         "<color> color",
         "color <color>",
-        "<color> wines"
+        "<color> wine"
       ]
     },
     {
@@ -25,7 +25,7 @@
         "moderate sugar",
         "medium sugar",
         "<sugar> sugar",
-        "<sugar> wines",
+        "<sugar> wine",
         "<sugar> sweetness",
         "low sweetness",
         "high sweetness",
@@ -40,7 +40,7 @@
         "flavor of <flavor>",
         "taste of <flavor>",
         "<flavor> taste",
-        "<flavor> wines",
+        "<flavor> wine",
         "<flavor> flavor",
         "taste <flavor>"
 
@@ -51,6 +51,7 @@
       "label": "body",
       "features": [
         "<body> body",
+        "<body> bodi",
         "<body> bodied",
         "body of <body>"
 
@@ -67,7 +68,7 @@
     {
       "label": "region",
       "features": [
-        "<region> wines",
+        "<region> wine",
         "<region> region",
         "region <region>",
         "<region>",

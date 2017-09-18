@@ -34,14 +34,17 @@ class WineChatbot:
                         hasMeaning = True
                         break
                 if hasMeaning:
-                    entities = self.entityExtractor.entityDetector(conditions, req)
+                    entity_arr = {}
+                    for key in conditions:
+                        entity_arr[key] = [0]
+                    entities = self.entityExtractor.entityDetector(conditions, entity_arr)
                     while not(entities[0]):
-                        print("please specify the type of " + entities[1] + " you want")
+                        print("please specify the " + entities[1] + " you want")
                         print("Available " + entities[1] + "s are")
-                        print(entities[2])
+                        print([keyword for keyword in self.entityExtractor.keywords[entities[1]]])
                         newEntity = raw_input("bot$ ")
-                        req += newEntity
-                        entities = self.entityExtractor.entityDetector(entities[3], req)
+                        conditions[entities[1]][1] = newEntity
+                        entities = self.entityExtractor.entityDetector(conditions, entities[2])
                     queryElements = self.queryGenerator.assembler(intent, entities[1])
                     results = self.queryGenerator.queryExecuter(queryElements[0], queryElements[1])
                     if len(results) == 0:

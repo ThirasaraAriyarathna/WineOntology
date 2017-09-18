@@ -75,7 +75,10 @@ class ConditionClassifier:
     def createTrainingSet(self):
         trainSet = {}
         for intent in self.intents['intents']:
-            trainSet[intent['label']] = self.vocabulary[intent["label"]]
+            if intent['label'] == 'region':
+                trainSet[intent['label']] = self.inputCleaning(self.vocabulary[intent["label"]])
+            else:
+                trainSet[intent['label']] = self.vocabulary[intent["label"]]
         # index = 0
         # for intent in self.intents["intents"]:
         #     trainSet.extend([[sent, index] for sent in self.inputCleaning(self.vocabulary[intent["label"]])])
@@ -90,16 +93,20 @@ class ConditionClassifier:
                 output = int(-1)
             else:
                 output = int(1)
-            testSet.extend([[sent, output] for sent in self.vocabulary[intent["label"]]])
+            if intent['label'] == "region":
+                sents = self.inputCleaning(self.vocabulary[intent["label"]])
+            else:
+                sents = self.vocabulary[intent["label"]]
+            testSet.extend([[sent, output] for sent in sents])
         testSet = np.array(testSet)
         return testSet
 
     def trainer(self, classifier):
 
         trainSet = self.createTrainingSet()
-        countVectorizer = CountVectorizer(ngram_range=(1, 2), token_pattern=r'\b\w+\b', min_df=1)
+        countVectorizer = CountVectorizer(ngram_range=(1, 1), token_pattern=r'\b\w+\b', min_df=1)
         xTrainCounts = countVectorizer.fit_transform(trainSet[classifier])
-        clf = svm.OneClassSVM(nu=0.1, kernel="rbf", gamma=0.0005)
+        clf = svm.OneClassSVM(nu=0.05, kernel="rbf", gamma=0.00004)
         clf.fit(xTrainCounts)
         vec_clf = Pipeline([('vectorizer', countVectorizer), ('clf', clf)])
         accuracy = self.accuracyCheck(classifier)
@@ -124,13 +131,18 @@ class ConditionClassifier:
 
         intentClf = re.sub('about', '', intent).lower()
         conditions = {}
+        for cls in self.intents['intents']:
+            conditions[cls["label"]] = [0]
         for chunk in inputChunks:
             for cls in self.intents["intents"]:
                 if intentClf != cls['label']:
                     clf = self.classifiers[cls["label"]]
+                    if cls['label'] == 'region':
+                        chunk = self.inputCleaning([chunk])[0]
                     result = clf.predict([chunk])
                     if result.astype(np.int64)[0] == -1:
-                        conditions[cls["label"]] = [1, chunk]
+                        conditions[cls["label"]][0] = 1
+                        conditions[cls["label"]].append(chunk)
         print conditions
         return conditions
 
@@ -165,10 +177,10 @@ class ConditionClassifier:
 # conditionClassifier = ConditionClassifier()
 # conditionClassifier.getDomainWords()
 # conditionClassifier.createVocabulary()
-# conditionClassifier.trainer("color")
-# conditionClassifier.accuracyCheck("sugar")
+# conditionClassifier.trainer("region")
+# conditionClassifier.accuracyCheck("region")
 # cc = ConditionClassifier()
-# cc.conditionIndentifier('aboutWine', ['red wines'])
+# cc.conditionIndentifier('aboutWine', ['australian wines'])
 
 
 

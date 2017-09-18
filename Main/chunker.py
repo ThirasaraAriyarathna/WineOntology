@@ -69,16 +69,16 @@ class Chuncker:
             if subtree.label() == 'NP':
                 words = [w for w, t in subtree.leaves()]
                 tags = [t for w, t in subtree.leaves()]
-                concecutive = 0
-                if tags[0] == 'JJ' and tags[1] != 'VBZ':
-                    for i in range(1, len(tags)):
-                        if tags[i] == 'JJ':
-                            chunks.append(words[i-1] + ' wine')
-                        else:
-                            chunks.append(words[i-1] + ' ' + PorterStemmer().stem(words.index(words[i])))
-                else:
-                    chunks.append(' '.join(words))
-                tagged_chunks.append(subtree.leaves())
+                if len(tags) >= 2:
+                    if tags[0] == 'JJ' and tags[1] != 'VBZ':
+                        for i in range(1, len(tags)):
+                            if tags[i] == 'JJ':
+                                chunks.append(words[i-1] + ' wine')
+                            else:
+                                chunks.append(words[i-1] + ' ' + PorterStemmer().stem(words[i]))
+                    else:
+                        chunks.append(' '.join(words))
+                    tagged_chunks.append(subtree.leaves())
         print chunks
         return chunks, tagged_chunks
 
