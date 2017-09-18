@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="eb438ff0-a44a-48a9-8784-e01573cb28d1" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -619,7 +618,14 @@
       <option name="project" value="LOCAL" />
       <updated>1505739796997</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="readme update">
+      <created>1505740015095</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1505740015095</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -701,7 +707,8 @@
     <MESSAGE value="complex queries" />
     <MESSAGE value="one class classifiers for condition classifying" />
     <MESSAGE value="one class accuracy improved." />
-    <option name="LAST_COMMIT_MESSAGE" value="one class accuracy improved." />
+    <MESSAGE value="readme update" />
+    <option name="LAST_COMMIT_MESSAGE" value="readme update" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
