@@ -2,36 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eb438ff0-a44a-48a9-8784-e01573cb28d1" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Testing/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Testing/entityExtractionTest.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Testing/intents.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Testing/languageProcessor.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Testing/main.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Testing/queryTesting.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Testing/tf-idfTest.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Testing/trainor.py" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Main/entityExtractionTest.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Main/intents.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Main/languageProcessor.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Main/main.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Main/queryTesting.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Main/tf-idfTest.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Main/trainor.py" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Main/ModelData/bodyClassifier.sav" afterPath="$PROJECT_DIR$/Main/ModelData/bodyClassifier.sav" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Main/ModelData/colorClassifier.sav" afterPath="$PROJECT_DIR$/Main/ModelData/colorClassifier.sav" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Main/ModelData/flavorClassifier.sav" afterPath="$PROJECT_DIR$/Main/ModelData/flavorClassifier.sav" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Main/ModelData/intentClassifier.sav" afterPath="$PROJECT_DIR$/Main/ModelData/intentClassifier.sav" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Main/ModelData/regionClassifier.sav" afterPath="$PROJECT_DIR$/Main/ModelData/regionClassifier.sav" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Main/ModelData/sugarClassifier.sav" afterPath="$PROJECT_DIR$/Main/ModelData/sugarClassifier.sav" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Main/botMain.py" afterPath="$PROJECT_DIR$/Main/botMain.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Main/chunker.py" afterPath="$PROJECT_DIR$/Main/chunker.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Main/conditionClassifier.py" afterPath="$PROJECT_DIR$/Main/conditionClassifier.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Main/entityExtractor.py" afterPath="$PROJECT_DIR$/Main/entityExtractor.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Main/intentClassifier.py" afterPath="$PROJECT_DIR$/Main/intentClassifier.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Main/intents2.json" afterPath="$PROJECT_DIR$/Main/intents2.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Main/queryGenerator.py" afterPath="$PROJECT_DIR$/Main/queryGenerator.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Main/test.json" afterPath="$PROJECT_DIR$/Main/test.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -128,8 +100,8 @@
       <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="596">
-              <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+            <state relative-caret-position="480">
+              <caret line="24" column="24" lean-forward="false" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -640,7 +612,14 @@
       <option name="project" value="LOCAL" />
       <updated>1505369067226</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="one class accuracy improved.">
+      <created>1505739796997</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1505739796997</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1090,8 +1069,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="596">
-          <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+        <state relative-caret-position="480">
+          <caret line="24" column="24" lean-forward="false" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="24" />
           <folding />
         </state>
       </provider>
