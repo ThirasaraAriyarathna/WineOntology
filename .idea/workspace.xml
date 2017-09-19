@@ -3,17 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="eb438ff0-a44a-48a9-8784-e01573cb28d1" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Main/ModelData/colorClassifier.sav" afterPath="$PROJECT_DIR$/Main/ModelData/colorClassifier.sav" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Main/ModelData/intentClassifier.sav" afterPath="$PROJECT_DIR$/Main/ModelData/intentClassifier.sav" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Main/chunker.py" afterPath="$PROJECT_DIR$/Main/chunker.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Main/conditionClassifier.py" afterPath="$PROJECT_DIR$/Main/conditionClassifier.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Main/entityExtractor.py" afterPath="$PROJECT_DIR$/Main/entityExtractor.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Main/intentClassifier.py" afterPath="$PROJECT_DIR$/Main/intentClassifier.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Main/intents1.json" afterPath="$PROJECT_DIR$/Main/intents1.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Main/intents3.json" afterPath="$PROJECT_DIR$/Main/intents3.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Main/queryGenerator.py" afterPath="$PROJECT_DIR$/Main/queryGenerator.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Main/test.json" afterPath="$PROJECT_DIR$/Main/test.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -655,7 +644,14 @@
       <option name="project" value="LOCAL" />
       <updated>1505794112397</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="test file update">
+      <created>1505810943639</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1505810943639</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -738,7 +734,8 @@
     <MESSAGE value="one class classifiers for condition classifying" />
     <MESSAGE value="one class accuracy improved." />
     <MESSAGE value="readme update" />
-    <option name="LAST_COMMIT_MESSAGE" value="readme update" />
+    <MESSAGE value="test file update" />
+    <option name="LAST_COMMIT_MESSAGE" value="test file update" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
