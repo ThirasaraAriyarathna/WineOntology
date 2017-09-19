@@ -30,7 +30,7 @@ class EntityExtractor:
                 if not(isPresent):
                     entities[key][0] = 0
                     return False, key, entities
-        print entities
+        # print entities
         return True, entities
 
     def getKeywords(self):

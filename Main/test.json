@@ -29,7 +29,7 @@
       }
     },
     {
-      "test": "white wines made from pinotnoir grape and made in Italy",
+      "test": "white wines made from pinotnoir grape and made in Italian region",
       "response": {
         "intent": "aboutWine",
         "wine": 0,
@@ -113,7 +113,7 @@
       }
     },
     {
-      "test": "wines made in australia with strong flavor",
+      "test": "what is the sweetness of the wines made in newzealand",
       "response": {
         "intent": "aboutSugar",
         "wine": 0,
@@ -127,7 +127,7 @@
       }
     },
     {
-      "test": "wines made in australia with strong flavor?",
+      "test": "sugar level of wine BancroftChardonnay",
       "response": {
         "intent": "aboutSugar",
         "wine": 0,
@@ -141,7 +141,7 @@
       }
     },
     {
-      "test": "wines made in australia with strong flavor?",
+      "test": "the sugar concentration of wines made in southaustralia",
       "response": {
         "intent": "aboutSugar",
         "wine": 0,
@@ -155,7 +155,7 @@
       }
     },
     {
-      "test": "wines made in australia with strong flavor?",
+      "test": "sweetness of wines made from merlot grape",
       "response": {
         "intent": "aboutSugar",
         "wine": 0,
@@ -169,7 +169,7 @@
       }
     },
     {
-      "test": "wines made in australia with strong flavor?",
+      "test": "flavors of red wines made in centraltexas",
       "response": {
         "intent": "aboutFlavor",
         "wine": 0,

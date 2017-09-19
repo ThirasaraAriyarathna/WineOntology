@@ -104,9 +104,9 @@ class ConditionClassifier:
     def trainer(self, classifier):
 
         trainSet = self.createTrainingSet()
-        countVectorizer = CountVectorizer(ngram_range=(1, 1), token_pattern=r'\b\w+\b', min_df=1)
+        countVectorizer = CountVectorizer(ngram_range=(1, 2), token_pattern=r'\b\w+\b', min_df=1)
         xTrainCounts = countVectorizer.fit_transform(trainSet[classifier])
-        clf = svm.OneClassSVM(nu=0.05, kernel="rbf", gamma=0.00004)
+        clf = svm.OneClassSVM(nu=0.2, kernel="rbf", gamma=0.0008)
         clf.fit(xTrainCounts)
         vec_clf = Pipeline([('vectorizer', countVectorizer), ('clf', clf)])
         accuracy = self.accuracyCheck(classifier)
@@ -177,10 +177,11 @@ class ConditionClassifier:
 # conditionClassifier = ConditionClassifier()
 # conditionClassifier.getDomainWords()
 # conditionClassifier.createVocabulary()
-# conditionClassifier.trainer("region")
-# conditionClassifier.accuracyCheck("region")
+# conditionClassifier.trainer("color")
+# conditionClassifier.accuracyCheck("color")
 # cc = ConditionClassifier()
-# cc.conditionIndentifier('aboutWine', ['australian wines'])
-
+# cc.conditionIndentifier('aboutWine', ['red wine'])
+# cc.conditionIndentifier('aboutWine', ['white wine'])
+# cc.conditionIndentifier('aboutWine', ['rose wine'])
 
 

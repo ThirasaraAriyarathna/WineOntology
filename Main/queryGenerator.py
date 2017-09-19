@@ -15,7 +15,7 @@ class QueryGenerator:
 
     outputAttribute = {"aboutWine": "wine", "aboutColor": "color", "aboutSugar": "sugar", "aboutFlavor": "flavor", "aboutBody": "body", "aboutGrape": "grape", "aboutMaker": "maker", "aboutRegion": "region", "info": "property"}
     queryAssets = {"sugar": '''{@wine@ wine:hasSugar @o@.} 
-                                union {?baseWine rdfs:subClassOf ?restriction. ?restriction owl:onProperty wine:hasSugar. ?restriction owl:hasValue @0@. @wine@ a ?baseWine}. ''',
+                                union {?baseWine rdfs:subClassOf ?restriction. ?restriction owl:onProperty wine:hasSugar. ?restriction owl:hasValue @o@. @wine@ a ?baseWine}. ''',
                    "flavor": '''{@wine@ wine:hasFlavor @o@.} 
                                 union {?baseWine rdfs:subClassOf ?restriction. ?restriction owl:onProperty wine:hasFlavor. ?restriction owl:hasValue @o@. @wine@ a ?baseWine.}. ''',
                    "color": '''{@wine@ wine:hasColor @o@.}
@@ -26,8 +26,7 @@ class QueryGenerator:
                    "maker": '''{@wine@ wine:hasMaker @o@.}. ''',
                    "region": '''{@wine@ wine:locatedIn @o@.} 
                                  union {?baseWine rdfs:subClassOf ?restriction. ?restriction owl:onProperty wine:locatedIn. ?restriction owl:hasValue @o@. @wine@ a ?baseWine.} 
-                                 union {?baseWine owl:intersectionOf ?list. ?list rdf:rest* [ rdf:first ?item ]. ?item owl:onProperty wine:locatedIn. ?item owl:hasValue @o@. @wine@ a ?baseWine.}. 
-                                  ''',
+                                 union {?baseWine owl:intersectionOf ?list. ?list rdf:rest* [ rdf:first ?item ]. ?item owl:onProperty wine:locatedIn. ?item owl:hasValue @o@. @wine@ a ?baseWine.}. ''',
                    "grape": '''{?wine wine:madeFromGrape @o@.}
                                 union {?baseWine rdfs:subClassOf ?restriction. ?restriction owl:onProperty wine:madeFromGrape. ?restriction owl:hasValue @o@. ?wine a ?baseWine.} 
                                 union {?baseWine owl:intersectionOf ?list. ?list rdf:rest* [ rdf:first ?item ]. ?item owl:onProperty wine:madeFromGrape. ?item owl:hasValue @o@. ?wine a ?baseWine.} 
@@ -52,20 +51,6 @@ class QueryGenerator:
             else:
                 queryCore += self.queryAssets[re.sub('about', '', intent).lower()]
                 queryCore = re.sub('@o@', '?' + self.outputAttribute[intent], queryCore)
-            # elif intent == "aboutColor":
-            #     pass
-            # elif intent == "aboutSugar":
-            #     pass
-            # elif intent == "aboutFlavor":
-            #     pass
-            # elif intent == "aboutBody":
-            #     pass
-            # elif intent == "aboutGrape":
-            #     pass
-            # elif intent == "aboutMaker":
-            #     pass
-            # elif intent == "aboutRegion":
-            #     pass
             if entities["wine"] == 1:
                 queryCore = re.sub('@wine@', "wine:" + entities["wine"][1], queryCore)
             else:
@@ -77,7 +62,7 @@ class QueryGenerator:
 
         # print queryCore
         queryString = queryString.replace("queryCore", queryCore)
-        print queryString
+        # print queryString
         return queryString, self.outputAttribute[intent]
 
     def queryExecuter(self, queryString, output):

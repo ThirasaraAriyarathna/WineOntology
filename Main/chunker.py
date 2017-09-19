@@ -79,7 +79,7 @@ class Chuncker:
                     else:
                         chunks.append(' '.join(words))
                     tagged_chunks.append(subtree.leaves())
-        print chunks
+        # print chunks
         return chunks, tagged_chunks
 
     def createTrainingSet(self):
@@ -117,8 +117,8 @@ class Chuncker:
 class UnigramChunker(nltk.ChunkParserI):
 
     def __init__(self, train_sents):
-        for i in train_sents:
-            print nltk.chunk.tree2conlltags(i)
+        # for i in train_sents:
+            # print nltk.chunk.tree2conlltags(i)
         train_data = [[(t, c) for w, t, c in nltk.chunk.tree2conlltags(sent)]
                       for sent in train_sents]
         self.tagger = nltk.UnigramTagger(train_data)

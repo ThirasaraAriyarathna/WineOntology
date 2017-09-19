@@ -7,14 +7,25 @@
         "wines having",
         "wines that have",
         "wines which have",
+        "wines made from",
+        "wines made in",
+        "wines produced in",
+        "wines manufactured in",
+        "color wines",
+        "flavor wines",
+        "bodied wines",
+        "sugared wines",
         "wines"
+
       ]
     },
     {
       "label": "aboutColor",
       "features": [
+        "color of wines",
         "color of",
         "color is the",
+        "color is the wines",
         "colors are"
       ]
     },
@@ -22,7 +33,9 @@
       "label": "aboutSugar",
       "features": [
         "sweetness of",
+        "sweetness of wines",
         "sweetness in",
+        "sweetness in wines",
         "sugar concentration of",
         "sugar concentration in",
         "sugar level of",
@@ -36,21 +49,28 @@
       "label": "aboutFlavor",
       "features": [
         "flavor of",
+        "flavor of wines",
         "flavor is the",
+        "flavor is the wine",
         "flavor in",
+        "flavor in wines",
         "flavors are",
         "taste of",
+        "taste of wines",
         "taste is the",
+        "taste is the wines",
         "taste in",
-        "taste are"
+        "taste in wines",
+        "tastes are"
       ]
     },
     {
       "label": "aboutBody",
       "features": [
         "body of",
+        "body of wines",
         "body type of",
-        "body types"
+        "body type of wines"
       ]
     },
     {
@@ -92,7 +112,9 @@
         "in which winery",
         "in what winery",
         "who is the producer",
+        "who are the producers",
         "who is the maker",
+        "who are the maker",
         "who produces",
         "who makes",
         "winery is",

@@ -5,7 +5,7 @@ How to run the code
 
 This code is written in python version 2.7, scikit-learn version 0.18.2., nltk version 3.2.4
 
-If you don't have python installed on your computer install python version 2.7
+If you don't have python installed on your computer, then install python version 2.7
 
 to install pip on linux run:
 sudo apt-get install pip
