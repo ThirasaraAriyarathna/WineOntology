@@ -5,8 +5,7 @@ How to run the code
 
 This code is written in python version 2.7, scikit-learn version 0.18.2., nltk version 3.2.4
 
-to install python in Linux run:
-sudo apt-get install python -v 2.7
+If you don't have python installed on your computer install python version 2.7
 
 to install pip on linux run:
 sudo apt-get install pip
@@ -24,3 +23,6 @@ sudo pip install -U nltk
 to install joblib and pickle on linux run:
 sudo pip install pickle,
 sudo pip install joblib
+
+After downloading repository unzip it and navigate to the folder Main inside WineOntologySample folder
+Then run: python botMain.py to run the code
