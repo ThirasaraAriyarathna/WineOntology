@@ -8,7 +8,7 @@ import pickle
 
 class Chuncker:
 
-    with open('intents2.json') as json_data:
+    with open('intents3.json') as json_data:
         intents = json.load(json_data)
     domainWords = {}
     vocabulary = {}
@@ -61,12 +61,24 @@ class Chuncker:
         clean_sent = self.inputCleaning([input])
         sent = nltk.word_tokenize(clean_sent[0])
         tagged_sent = nltk.pos_tag(sent)
-        chunked_sent = self.unigram_chunker.parse(tagged_sent)
+        grammar = r"""
+                                  NP:
+                                    {<VBD|VBN>?<IN><JJ|NN|NNP|NNS><NN|NNP|NNS>?}
+                                    {<VBD|VBN><VBG><JJ|NN|NNP|NNS><NN|NNP|NNS>?}
+                                    {<JJ><NN><VBZ><JJ|NN|NNP|NNS><NN|NNP|NNS>?}
+                                    {<JJ>+<VBD|VBN|NN|NNS|NNP>}
+                                    {<NN|NNP|NNS><NN|NNP|NNS|VBD>}
+                                  """
+        cp = nltk.RegexpParser(grammar)
+        chunked_sent = cp.parse(tagged_sent)
+        # chunked_sent = self.unigram_chunker.parse(tagged_sent)
+        # print chunked_sent
 
         chunks = []
         tagged_chunks = []
         for subtree in chunked_sent.subtrees():
             if subtree.label() == 'NP':
+                print subtree
                 words = [w for w, t in subtree.leaves()]
                 tags = [t for w, t in subtree.leaves()]
                 if len(tags) >= 2:
@@ -77,9 +89,11 @@ class Chuncker:
                             else:
                                 chunks.append(words[i-1] + ' ' + PorterStemmer().stem(words[i]))
                     else:
+                        if 'JJ' in tags and tags[tags.index('JJ') + 1] == 'NNS':
+                            words[tags.index('JJ') + 1] = PorterStemmer().stem(words[tags.index('JJ') + 1])
                         chunks.append(' '.join(words))
                     tagged_chunks.append(subtree.leaves())
-        # print chunks
+        print chunks
         return chunks, tagged_chunks
 
     def createTrainingSet(self):
@@ -90,8 +104,7 @@ class Chuncker:
                             {<VBD|VBN><VBG><JJ|NN|NNP|NNS><NN|NNP|NNS>?}
                             {<JJ><NN><VBZ><JJ|NN|NNP|NNS><NN|NNP|NNS>?}
                             {<JJ>+<VBD|VBN|NN|NNS|NNP>}
-                            {<NN><NN|VBD>}
-                            {<NN|NNS|NNP>}
+                            {<NN|NNP|NNS><NN|NNP|NNS|VBD>}
                           """
         cp = nltk.RegexpParser(grammar)
         train_sents = []
@@ -117,8 +130,8 @@ class Chuncker:
 class UnigramChunker(nltk.ChunkParserI):
 
     def __init__(self, train_sents):
-        # for i in train_sents:
-            # print nltk.chunk.tree2conlltags(i)
+        for i in train_sents:
+            print nltk.chunk.tree2conlltags(i)
         train_data = [[(t, c) for w, t, c in nltk.chunk.tree2conlltags(sent)]
                       for sent in train_sents]
         self.tagger = nltk.UnigramTagger(train_data)
@@ -139,11 +152,13 @@ class UnigramChunker(nltk.ChunkParserI):
 
 
 # chunker = Chuncker()
-# chunker.chunck("what are the available red wines made in australia")
+# chunker.chunck("flavors of red wines made in centraltexas")
 # chunker.getDomainWords()
 # chunker.createVocabulary()
 # train_sents = chunker.createTrainingSet()
 # chunker.trainTagger(train_sents)
-# sentences = nltk.word_tokenize("What are the red wines made in Australia")
+# sentences = nltk.word_tokenize("what is the body of the wine BancroftChardonnay")
 # sentences = nltk.pos_tag(sentences)
+# unigram_chunker = UnigramChunker(train_sents)
 # print unigram_chunker.parse(sentences)
+# print chunker.chunck("what is the body of the wine BancroftChardonnay")

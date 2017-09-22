@@ -3,25 +3,37 @@
     {
       "label": "wine",
       "features": [
-        "<wine> wine"
+        "<wine> wine",
+        "wine <wine>",
+        "of <wine>",
+        "in <wine>",
+        "<wine>"
       ]
     },
     {
       "label": "color",
       "features": [
-        "<color>",
-        "pink"
+        "<color> in color",
+        "<color> color",
+        "color of <color>",
+        "<color> wines"
       ]
     },
     {
       "label": "sugar",
       "features": [
-        "low",
+        "low sugar",
         "high sugar",
         "moderate sugar",
         "medium sugar",
         "<sugar> sugar",
-        "<sugar> wines"
+        "<sugar> wines",
+        "low sugar level",
+        "high sugar level",
+        "moderate sugar level",
+        "medium sugar level",
+        "<sugar> sugar level"
+
 
       ]
     },
@@ -33,7 +45,9 @@
         "<flavor> taste",
         "<flavor> wines",
         "<flavor> flavor",
-        "tastes <flavor> flavor"
+        "tastes <flavor> flavor",
+        "<flavor> in flavor",
+        "<flavor> in taste"
 
 
       ]
@@ -43,7 +57,8 @@
       "features": [
         "<body> body",
         "<body> bodied",
-        "body of <body>"
+        "body of <body>",
+        "<body> body type"
 
       ]
     },
@@ -51,16 +66,28 @@
       "label": "grape",
       "features": [
         "<grape> grape",
-        "using <grape> grape",
+        "made using <grape> grape",
+        "prepared using <grape> grape",
+        "manufactured using <grape> grape",
+        "produced using <grape> grape",
         "using <grape>",
-        "<grape>"
+        "made from <grape>",
+        "produced from <grape>",
+        "manufactured from <grape>",
+        "prepared from <grape>",
+        "<grape> made into"
 
       ]
     },
     {
       "label": "maker",
       "features": [
-        "<maker>",
+        "produced in <maker> winery",
+        "made in <maker> winery",
+        "produced in winery <maker>",
+        "manufactured in <maker> winery",
+        "made by <maker> winery",
+        "producer is <maker> winery",
         "<maker> winery"
       ]
     },
@@ -68,11 +95,21 @@
       "label": "region",
       "features": [
         "<region> wines",
-        "<region> region",
-        "<region>",
+        "made in <region> region",
+        "produced in <region> region",
+        "manufactured in <region> region",
+        "prepared in <region> region",
+        "made in <region>",
+        "produced in <region>",
+        "manufactured in <region>",
+        "prepared in <region>",
+        "from <region>",
         "located in <region>",
+        "located in <region> region",
+        "native region is <region> region",
         "native region is <region>",
-        "native country is <region>"
+        "native country is <region>",
+        "native country is <region> region"
       ]
     }
   ]

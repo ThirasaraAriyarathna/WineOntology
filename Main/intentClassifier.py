@@ -108,5 +108,5 @@ class IntentClassifier:
 # intentClassifier.getDomainWords()
 # intentClassifier.createVocabulary()
 # intentClassifier.trainer()
-# intentClassifier.intentIdentifier("who are the producers of wines made in newzealand")
+# intentClassifier.intentIdentifier("In which wineries")
 # print intentClassifier.vocabulary

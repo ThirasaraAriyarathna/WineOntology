@@ -25,12 +25,11 @@ class ConditionClassifier:
     vocabulary = {}
     subjects = [("sugar", "WineSugar"), ("flavor", "WineFlavor"), ("maker", "Winery"), ("region", "Region"),
                 ("color", "WineColor"), ("grape", "WineGrape"), ("body", "WineBody"), ("wine", "hasMaker")]
-    classifiers = {}
     queryGenerator = QueryGenerator()
     stemmer = PorterStemmer()
 
     def __init__(self):
-        self.restoreClassifiers()
+        self.classifiers = self.restoreClassifiers()
 
     def getDomainWords(self):
         for subject in self.subjects:
@@ -106,7 +105,7 @@ class ConditionClassifier:
         trainSet = self.createTrainingSet()
         countVectorizer = CountVectorizer(ngram_range=(1, 2), token_pattern=r'\b\w+\b', min_df=1)
         xTrainCounts = countVectorizer.fit_transform(trainSet[classifier])
-        clf = svm.OneClassSVM(nu=0.2, kernel="rbf", gamma=0.0008)
+        clf = svm.OneClassSVM(nu=0.2, kernel="rbf", gamma=0.0009)
         clf.fit(xTrainCounts)
         vec_clf = Pipeline([('vectorizer', countVectorizer), ('clf', clf)])
         accuracy = self.accuracyCheck(classifier)
@@ -154,7 +153,7 @@ class ConditionClassifier:
         predictions = predictions.astype(np.int64)
         for i in range(0, len(yTest)):
             if yTest[i] == predictions[i]:
-                score +=1
+                score += 1
         accuracy = score/float(predictions.size)
         print accuracy
         return accuracy
@@ -164,10 +163,12 @@ class ConditionClassifier:
 
 
     def restoreClassifiers(self):
+        classifiers = {}
         for intent in self.intents["intents"]:
             filename = intent["label"] + 'Classifier.sav'
             clf = joblib.load("ModelData/" + filename)
-            self.classifiers[intent["label"]] = clf
+            classifiers[intent["label"]] = clf
+        return classifiers
 
 
 
@@ -177,11 +178,11 @@ class ConditionClassifier:
 # conditionClassifier = ConditionClassifier()
 # conditionClassifier.getDomainWords()
 # conditionClassifier.createVocabulary()
-# conditionClassifier.trainer("color")
-# conditionClassifier.accuracyCheck("color")
+# conditionClassifier.trainer("flavor")
+# conditionClassifier.accuracyCheck("flavor")
 # cc = ConditionClassifier()
-# cc.conditionIndentifier('aboutWine', ['red wine'])
-# cc.conditionIndentifier('aboutWine', ['white wine'])
-# cc.conditionIndentifier('aboutWine', ['rose wine'])
+# cc.conditionIndentifier('aboutWine', ['flavor of delicate'])
+# cc.conditionIndentifier('aboutWine', ['delicate wine'])
+# cc.conditionIndentifier('aboutWine', ['moderate wine'])
 
 

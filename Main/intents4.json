@@ -1,18 +1,12 @@
 {
-  "intents": [
-    {
-      "label": "aboutColor",
+  "intents":[
+   {
       "features": [
         "color of wines",
         "color of",
         "color is the",
         "color is the wines",
-        "colors are"
-      ]
-    },
-    {
-      "label": "aboutSugar",
-      "features": [
+        "colors are",
         "sweetness of",
         "sweetness of wines",
         "sweetness in",
@@ -23,12 +17,7 @@
         "sugar level in",
         "sweet is",
         "sugar content of",
-        "sugar content of"
-      ]
-    },
-    {
-      "label": "aboutFlavor",
-      "features": [
+        "sugar content of",
         "flavor of",
         "flavor of wines",
         "flavor is the",
@@ -42,23 +31,13 @@
         "taste is the wines",
         "taste in",
         "taste in wines",
-        "tastes are"
-      ]
-    },
-    {
-      "label": "aboutBody",
-      "features": [
+        "tastes are",
         "body of",
         "body of wines",
         "body type of",
         "body type of wines",
         "type of body",
-        "body type is the"
-      ]
-    },
-    {
-      "label": "aboutRegion",
-      "features": [
+        "body type is the",
         "from where the",
         "region of the",
         "native region of",
@@ -70,12 +49,7 @@
         "where are",
         "in what country",
         "in which region",
-        "location of winery"
-      ]
-    },
-    {
-      "label": "aboutGrape",
-      "features": [
+        "location of winery",
         "from what grape is",
         "from what grape are",
         "from which grape is",
@@ -91,12 +65,7 @@
         "grape is used to",
         "grape are used to",
         "grape are used in",
-        "grape is used in"
-      ]
-    },
-    {
-      "label": "aboutMaker",
-      "features": [
+        "grape is used in",
         "winery of",
         "in which winery",
         "in what winery",
@@ -110,26 +79,6 @@
         "what maker",
         "what producer",
         "from what winery"
-      ]
-    },
-    {
-      "label": "aboutWine",
-      "features": [
-        "wines with",
-        "wines having",
-        "wines that have",
-        "wines which have",
-        "wines made from",
-        "wines from",
-        "wines made in",
-        "wines produced in",
-        "wines manufactured in",
-        "color wines",
-        "flavor wines",
-        "bodied wines",
-        "sugared wines",
-        "wines"
-
       ]
     }
   ]

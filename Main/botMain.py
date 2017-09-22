@@ -15,9 +15,14 @@ class WineChatbot:
         self.queryGenerator = QueryGenerator()
         self.chunker = Chuncker()
 
-    def main(self):
+    def main(self, test, test_inputs):
 
-        req = raw_input("bot$ ")
+        if test:
+            test_results = []
+            test_index = 0
+            req = test_inputs[test_index]
+        else:
+            req = raw_input("bot$ ")
         req.strip()
         while len(req) > 0:
             intent = self.intentClassifier.intentIdentifier(req)
@@ -28,34 +33,43 @@ class WineChatbot:
                 tagged_chunks = chunks[1]
                 chunks = chunks[0]
                 conditions = self.conditionClassifier.conditionIndentifier(intent, chunks)
-                hasMeaning = False
-                for key in conditions:
-                    if conditions[key][0] == 1:
-                        hasMeaning = True
-                        break
-                if hasMeaning:
-                    entity_arr = {}
+                if not test:
+                    hasMeaning = False
                     for key in conditions:
-                        entity_arr[key] = [0]
-                    entities = self.entityExtractor.entityDetector(conditions, entity_arr)
-                    while not(entities[0]):
-                        print("please specify the " + entities[1] + " you want")
-                        print("Available " + entities[1] + "s are")
-                        print([keyword for keyword in self.entityExtractor.keywords[entities[1]]])
-                        newEntity = raw_input("bot$ ")
-                        conditions[entities[1]][1] = newEntity
-                        entities = self.entityExtractor.entityDetector(conditions, entities[2])
-                    queryElements = self.queryGenerator.assembler(intent, entities[1])
-                    results = self.queryGenerator.queryExecuter(queryElements[0], queryElements[1])
-                    if len(results) == 0:
-                        print("we couldn't find any matching results in the ontology. Any other questions about wines?")
+                        if conditions[key][0] == 1:
+                            hasMeaning = True
+                            break
+                    if hasMeaning:
+                        entity_arr = {}
+                        for key in conditions:
+                            entity_arr[key] = [0]
+                        entities = self.entityExtractor.entityDetector(conditions, entity_arr)
+                        while not(entities[0]):
+                            print("please specify the " + entities[1] + " you want")
+                            print("Available " + entities[1] + "s are")
+                            print([keyword for keyword in self.entityExtractor.keywords[entities[1]]])
+                            newEntity = raw_input("bot$ ")
+                            conditions[entities[1]][1] = newEntity
+                            entities = self.entityExtractor.entityDetector(conditions, entities[2])
+                        queryElements = self.queryGenerator.assembler(intent, entities[1])
+                        results = self.queryGenerator.queryExecuter(queryElements[0], queryElements[1])
+                        if len(results) == 0:
+                            print("we couldn't find any matching results in the ontology. Any other questions about wines?")
+                        else:
+                            for result in results:
+                                print result
                     else:
-                        for result in results:
-                            print result
+                        print("Please specify what you want to know about wines")
+
+            if test:
+                test_results.append([intent, conditions])
+                if len(test_inputs) == test_index + 1:
+                    return test_results
                 else:
-                    print("Please specify what you want to know about wines")
+                    test_index += 1
+                    req = test_inputs[test_index]
+            else:
+                req = raw_input("bot$ ")
 
-            req = raw_input("bot$ ")
-
-chatbot = WineChatbot()
-chatbot.main()
+# chatbot = WineChatbot()
+# chatbot.main(False, [])

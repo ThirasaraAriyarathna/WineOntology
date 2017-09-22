@@ -117,21 +117,21 @@
       "response": {
         "intent": "aboutSugar",
         "wine": 0,
-        "color": 1,
+        "color": 0,
         "sugar": 0,
         "flavor": 0,
         "body": 0,
         "grape": 0,
         "maker": 0,
-        "region":0
+        "region":1
       }
     },
     {
       "test": "sugar level of wine BancroftChardonnay",
       "response": {
         "intent": "aboutSugar",
-        "wine": 0,
-        "color": 1,
+        "wine": 1,
+        "color": 0,
         "sugar": 0,
         "flavor": 0,
         "body": 0,
@@ -145,13 +145,13 @@
       "response": {
         "intent": "aboutSugar",
         "wine": 0,
-        "color": 1,
+        "color": 0,
         "sugar": 0,
         "flavor": 0,
         "body": 0,
         "grape": 0,
         "maker": 0,
-        "region":0
+        "region":1
       }
     },
     {
@@ -159,11 +159,11 @@
       "response": {
         "intent": "aboutSugar",
         "wine": 0,
-        "color": 1,
+        "color": 0,
         "sugar": 0,
         "flavor": 0,
         "body": 0,
-        "grape": 0,
+        "grape": 1,
         "maker": 0,
         "region":0
       }
@@ -173,7 +173,21 @@
       "response": {
         "intent": "aboutFlavor",
         "wine": 0,
-        "color": 1,
+        "color": 0,
+        "sugar": 0,
+        "flavor": 0,
+        "body": 0,
+        "grape": 0,
+        "maker": 0,
+        "region":1
+      }
+    },
+    {
+      "test": "what is the flavor in wine BancroftChardonnay",
+      "response": {
+        "intent": "aboutFlavor",
+        "wine": 1,
+        "color": 0,
         "sugar": 0,
         "flavor": 0,
         "body": 0,
@@ -183,39 +197,39 @@
       }
     },
     {
-      "test": "wines made in australia with strong flavor?",
+      "test": "flavors of wines with low sugar and full body",
       "response": {
         "intent": "aboutFlavor",
         "wine": 0,
-        "color": 1,
-        "sugar": 0,
+        "color": 0,
+        "sugar": 1,
         "flavor": 0,
-        "body": 0,
+        "body": 1,
         "grape": 0,
         "maker": 0,
         "region":0
       }
     },
     {
-      "test": "wines made in australia with strong flavor?",
+      "test": "which flavors are there in the wines made in closdevougeot winery",
       "response": {
         "intent": "aboutFlavor",
         "wine": 0,
-        "color": 1,
+        "color": 0,
         "sugar": 0,
         "flavor": 0,
         "body": 0,
         "grape": 0,
-        "maker": 0,
+        "maker": 1,
         "region":0
       }
     },
     {
-      "test": "wines made in australia with strong flavor?",
+      "test": "what is the body of the wine BancroftChardonnay",
       "response": {
-        "intent": "aboutFlavor",
-        "wine": 0,
-        "color": 1,
+        "intent": "aboutBody",
+        "wine": 1,
+        "color": 0,
         "sugar": 0,
         "flavor": 0,
         "body": 0,
@@ -225,13 +239,41 @@
       }
     },
     {
-      "test": "wines made in australia with strong flavor?",
+      "test": "what are the body types of wines made in Napa region",
+      "response": {
+        "intent": "aboutBody",
+        "wine": 0,
+        "color": 0,
+        "sugar": 0,
+        "flavor": 0,
+        "body": 0,
+        "grape": 0,
+        "maker": 0,
+        "region":1
+      }
+    },
+    {
+      "test": "body types of wines made from Semillon grape",
+      "response": {
+        "intent": "aboutBody",
+        "wine": 0,
+        "color": 0,
+        "sugar": 0,
+        "flavor": 0,
+        "body": 0,
+        "grape": 1,
+        "maker": 0,
+        "region":0
+      }
+    },
+    {
+      "test": "what is the body of red wine with delicate flavor and dry sugar level",
       "response": {
         "intent": "aboutBody",
         "wine": 0,
         "color": 1,
-        "sugar": 0,
-        "flavor": 0,
+        "sugar": 1,
+        "flavor": 1,
         "body": 0,
         "grape": 0,
         "maker": 0,
@@ -239,11 +281,11 @@
       }
     },
     {
-      "test": "wines made in australia with strong flavor?",
+      "test": "what is the grape used to make BancroftChardonnay wine",
       "response": {
-        "intent": "aboutBody",
-        "wine": 0,
-        "color": 1,
+        "intent": "aboutGrape",
+        "wine": 1,
+        "color": 0,
         "sugar": 0,
         "flavor": 0,
         "body": 0,
@@ -253,41 +295,27 @@
       }
     },
     {
-      "test": "wines made in australia with strong flavor?",
+      "test": "from which grapes are wines made in newzealand made",
       "response": {
-        "intent": "aboutBody",
+        "intent": "aboutGrape",
         "wine": 0,
-        "color": 1,
+        "color": 0,
         "sugar": 0,
         "flavor": 0,
         "body": 0,
         "grape": 0,
         "maker": 0,
-        "region":0
+        "region":1
       }
     },
     {
-      "test": "wines made in australia with strong flavor?",
-      "response": {
-        "intent": "aboutBody",
-        "wine": 0,
-        "color": 1,
-        "sugar": 0,
-        "flavor": 0,
-        "body": 0,
-        "grape": 0,
-        "maker": 0,
-        "region":0
-      }
-    },
-    {
-      "test": "wines made in australia with strong flavor?",
+      "test": "grapes used to prepare white wines with moderate flavor",
       "response": {
         "intent": "aboutGrape",
         "wine": 0,
         "color": 1,
         "sugar": 0,
-        "flavor": 0,
+        "flavor": 1,
         "body": 0,
         "grape": 0,
         "maker": 0,
@@ -295,111 +323,83 @@
       }
     },
     {
-      "test": "wines made in australia with strong flavor?",
+      "test": "what grapes are used in preparing wines made in italian region",
       "response": {
         "intent": "aboutGrape",
         "wine": 0,
-        "color": 1,
+        "color": 0,
         "sugar": 0,
         "flavor": 0,
         "body": 0,
         "grape": 0,
         "maker": 0,
-        "region":0
+        "region":1
       }
     },
     {
-      "test": "wines made in australia with strong flavor?",
+      "test": "who produces the wines made in southaustralian region",
       "response": {
-        "intent": "aboutGrape",
+        "intent": "aboutMaker",
         "wine": 0,
-        "color": 1,
+        "color": 0,
         "sugar": 0,
         "flavor": 0,
         "body": 0,
         "grape": 0,
         "maker": 0,
-        "region":0
+        "region":1
       }
     },
     {
-      "test": "wines made in australia with strong flavor?",
-      "response": {
-        "intent": "aboutGrape",
-        "wine": 0,
-        "color": 1,
-        "sugar": 0,
-        "flavor": 0,
-        "body": 0,
-        "grape": 0,
-        "maker": 0,
-        "region":0
-      }
-    },
-    {
-      "test": "wines made in australia with strong flavor?",
+      "test": "in which wineries are rose color and medium body wines made",
       "response": {
         "intent": "aboutMaker",
         "wine": 0,
         "color": 1,
         "sugar": 0,
         "flavor": 0,
-        "body": 0,
+        "body": 1,
         "grape": 0,
         "maker": 0,
         "region":0
       }
     },
     {
-      "test": "wines made in australia with strong flavor?",
+      "test": "what is the winery of the wines made in italian region",
       "response": {
         "intent": "aboutMaker",
         "wine": 0,
-        "color": 1,
+        "color": 0,
         "sugar": 0,
         "flavor": 0,
         "body": 0,
         "grape": 0,
         "maker": 0,
-        "region":0
+        "region":1
       }
     },
     {
-      "test": "wines made in australia with strong flavor?",
+      "test": "what wineries produce wines made from CheninBlanc grape",
       "response": {
         "intent": "aboutMaker",
         "wine": 0,
-        "color": 1,
+        "color": 0,
         "sugar": 0,
         "flavor": 0,
         "body": 0,
         "grape": 0,
-        "maker": 0,
+        "maker": 1,
         "region":0
       }
     },
     {
-      "test": "wines made in australia with strong flavor?",
-      "response": {
-        "intent": "aboutMaker",
-        "wine": 0,
-        "color": 1,
-        "sugar": 0,
-        "flavor": 0,
-        "body": 0,
-        "grape": 0,
-        "maker": 0,
-        "region":0
-      }
-    },
-    {
-      "test": "wines made in australia with strong flavor?",
+      "test": "where are wines with strong flavor and a offdry sugar level made",
       "response": {
         "intent": "aboutRegion",
         "wine": 0,
-        "color": 1,
-        "sugar": 0,
-        "flavor": 0,
+        "color": 0,
+        "sugar": 1,
+        "flavor": 1,
         "body": 0,
         "grape": 0,
         "maker": 0,
@@ -407,26 +407,27 @@
       }
     },
     {
-      "test": "wines made in australia with strong flavor?",
+      "test": "what is the location of winery Bancroft",
       "response": {
         "intent": "aboutRegion",
         "wine": 0,
-        "color": 1,
+        "color": 0,
         "sugar": 0,
         "flavor": 0,
         "body": 0,
         "grape": 0,
-        "maker": 0,
-        "region":0
-      },
+        "maker": 1,
+        "region": 0
+      }
+    },
       {
-      "test": "wines made in australia with strong flavor?",
+      "test": "in which regions are wines having a delicate flavor and rose color produced",
       "response": {
         "intent": "aboutRegion",
         "wine": 0,
         "color": 1,
         "sugar": 0,
-        "flavor": 0,
+        "flavor": 1,
         "body": 0,
         "grape": 0,
         "maker": 0,
@@ -434,16 +435,16 @@
       }
     },
     {
-      "test": "wines made in australia with strong flavor?",
+      "test": "what is the native region of wines made in closdevougeot winery",
       "response": {
         "intent": "aboutRegion",
         "wine": 0,
-        "color": 1,
+        "color": 0,
         "sugar": 0,
         "flavor": 0,
         "body": 0,
         "grape": 0,
-        "maker": 0,
+        "maker": 1,
         "region":0
       }
     }
